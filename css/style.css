@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap");
 body {
+  box-sizing: border-box;
   text-align: center;
   font-size: 16px;
+  display: flex;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: "Montserrat", sans-serif;
 }
 
-main {
-  height: 90vh;
-}
 main img {
   margin: 20px;
 }
