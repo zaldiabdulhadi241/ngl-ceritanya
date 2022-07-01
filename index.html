@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bukan NGL NGL an</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Bukan kek yang di IG IG</h1>
+      <p>isi gan. cuman pen nyoba script doang</p>
+      <img
+        src="https://c.tenor.com/XL6X7NG2_4gAAAAd/windah-basudara-windah.gif"
+        alt="gambar"
+        width="200px"
+      />
+      <form name="submit-to-google-sheet">
+        <input type="text" name="nama" placeholder="Masukkan Nama" id="nama" />
+        <textarea
+          name="pesan"
+          cols="30"
+          rows="4"
+          placeholder="Masukkan Pesan kepada Pembuat"
+        ></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </main>
+    <footer>tqtq 💕</footer>
+  </body>
+  <script>
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbyB9zIKatTQYqAVVlYLszpMvygLGRdRRQx0UqtHtSMingwWACpFeUpNWu0Q9yFP5AcOJg/exec";
+    const form = document.forms["submit-to-google-sheet"];
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then((response) => {
+          console.log("Success!", response);
+          alert("Tq Gan");
+          form.reset();
+        })
+        .catch((error) => console.error("Error!", error.message));
+    });
+  </script>
+</html>
